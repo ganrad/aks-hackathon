@@ -19,4 +19,4 @@ In a nutshell, you will work on the following tasks.
 
 **Workflow:**
 
-### 1] [Deploy a Linux CentOS VM on Azure (~ Bastion Host ~ Jump-Box)](https://github.com/ganrad/aks-hackathon/1-Deploy-LinuxVM)
+### 1] [Deploy a Linux CentOS VM on Azure (~ Bastion Host ~ Jump-Box)](https://github.com/ganrad/aks-hackathon/tree/master/1-Deploy-LinuxVM)
