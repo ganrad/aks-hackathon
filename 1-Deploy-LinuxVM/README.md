@@ -1,7 +1,7 @@
 #  Deploy a Linux VM (Jump-Box / Bastion Host)
 **Approx. time to complete this section: 45 minutes**
 
-**Description:**
+### Description:
 As a first step, we will deploy a Linux VM (CentOS) on Azure and install prerequisite CLI tools on it.  This VM will serve as a jump box (Bastion host) and allow us to manage PaaS services on Azure using CLI.
 
 The following tools (binaries) will be installed on this VM.
@@ -13,12 +13,12 @@ The following tools (binaries) will be installed on this VM.
 - [Kubernetes Service Catalog](https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/). Service Catalog will be used for dynamically provisioning PaaS services on Azure.
 - Docker engine (community edition).  Docker will be used to deploy and test application containers on this host.
 
-**Prerequisites:**
+### Prerequisites:
 1. An active **Microsoft Azure Subscription**
 
    You can obtain a free Azure subscription by accessing the [Microsoft Azure](https://azure.microsoft.com/en-us/?v=18.12) website.  In order to execute all the labs in this project, either your *Azure subscription* or the *Resource Group* **must** have **Owner** Role assigned to it.
 
-**Steps:**
+### Steps:
 Follow the steps below to create the Bastion host (Linux VM), install pre-requisite software (CLI) on this VM.
 
 1. Access the Azure Cloud Shell
