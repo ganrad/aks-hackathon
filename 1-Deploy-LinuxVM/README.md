@@ -18,6 +18,7 @@ The following tools (binaries) will be installed on this VM.
 
    You can obtain a free Azure subscription by accessing the [Microsoft Azure](https://azure.microsoft.com/en-us/?v=18.12) website.  In order to execute all the labs in this project, either your *Azure subscription* or the *Resource Group* **must** have **Owner** Role assigned to it.
 
+**Steps:**
 Follow the steps below to create the Bastion host (Linux VM), install pre-requisite software (CLI) on this VM.
 
 1. Access the Azure Cloud Shell
