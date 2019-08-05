@@ -8,9 +8,8 @@
 
 set -e
 
-if [ $# -ne 2 ]; then
-	echo -e "\nUsage: setup-bastion.sh <Azure User> <Password>"
-	echo -e "\tMissing arguments : Azure User name and/or password"
+if [ $# -ge 1 ]; then
+	echo -e "\nUsage: setup-bastion.sh"
 	exit 1
 fi
 
@@ -32,10 +31,6 @@ sudo yum -y install azure-cli
 # Test the install
 echo "Printing Azure CLI version"
 az -v
-#
-# Login to your Azure account
-echo "Logging into Azure using CLI"
-az login -u $1 -p $2
 #
 # View help on az commands, sub-commands
 echo "Listing Azure CLI commands"
@@ -91,11 +86,11 @@ az aks install-cli --install-location=./aztools/kubectl
 #
 # Install Kubernetes Service Catalog 'svcat' binary in 'aztools' directory
 echo "Installing Kubernetes Service Catalog"
-$ cd aztools
-$ curl -sLO https://servicecatalogcli.blob.core.windows.net/cli/latest/$(uname -s)/$(uname -m)/svcat
-$ chmod +x ./svcat
+cd aztools
+curl -sLO https://servicecatalogcli.blob.core.windows.net/cli/latest/$(uname -s)/$(uname -m)/svcat
+chmod +x ./svcat
 # Switch back to home directory
-$ cd
+cd
 # Finally, update '.bashrc' file and set the path to Maven, Helm and Kubectl binaries
 echo "Configuring PATH ..."
 cd

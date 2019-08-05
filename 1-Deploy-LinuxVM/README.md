@@ -44,7 +44,7 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
 
    ```bash
    # Remember to specify the password for the 'labuser'.
-   $ az vm create --resource-group <RG_NAME> --name aks-hack --image OpenLogic:CentOS:7.4:7.4.20180118 --size Standard_B2s --generate-ssh-keys --admin-username labuser --admin-password <password> --authentication-type password
+   $ az vm create --resource-group <RG_NAME> --name aks-hack --image OpenLogic:CentOS:7.5:latest --size Standard_B1ms --generate-ssh-keys --admin-username labuser --admin-password <password> --authentication-type password
    # When the above command exits, it will print the public IP address, login name (labuser) and password.  Make a note of these values.
    ```
 
@@ -148,12 +148,12 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
    Refer to the commands below.  You can also refer to the [Docker CE install docs for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/).
 
    ```bash
-   $ sudo yum update
-   $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+   $ sudo yum -y update
+   $ sudo yum -y install yum-utils device-mapper-persistent-data lvm2
    $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-   $ sudo yum install docker-ce-18.03.0.ce
+   $ sudo yum install docker-ce docker-ce-cli containerd.io
    $ sudo systemctl enable docker
-   $ sudo groupadd docker
+   # sudo groupadd docker (This command is not needed anymore)
    $ sudo usermod -aG docker labuser
    ```
 
