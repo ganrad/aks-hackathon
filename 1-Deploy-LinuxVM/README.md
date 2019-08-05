@@ -14,14 +14,18 @@ The following tools (binaries) will be installed on this VM.
 - Docker engine (community edition).  Docker will be used to deploy and test application containers on this host.
 
 **Prerequisites:**
-1.  An active **Microsoft Azure Subscription**.  You can obtain a free Azure subscription by accessing the [Microsoft Azure](https://azure.microsoft.com/en-us/?v=18.12) website.  In order to execute all the labs in this project, either your *Azure subscription* or the *Resource Group* **must** have **Owner** Role assigned to it.
+1. An active **Microsoft Azure Subscription**
+
+   You can obtain a free Azure subscription by accessing the [Microsoft Azure](https://azure.microsoft.com/en-us/?v=18.12) website.  In order to execute all the labs in this project, either your *Azure subscription* or the *Resource Group* **must** have **Owner** Role assigned to it.
 
 Follow the steps below to create the Bastion host (Linux VM), install pre-requisite software (CLI) on this VM.
 
 1.  Access the Azure Cloud Shell
+
     Login to the [Azure Portal](https://portal.azure.com) using your credentials and use a **Azure Cloud Shell** session to perform the next steps.  Azure Cloud Shell is an interactive, browser-accessible shell for managing Azure resources.  The first time you access the Cloud Shell, you will be prompted to create a resource group, storage account and file share.  You can use the defaults or click on *Advanced Settings* to customize the defaults.  Accessing the Cloud Shell is described in [Overview of Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
 
 2.  Create a resource group
+
     An Azure resource group is a logical container into which Azure resources are deployed and managed.  From the Cloud Shell, use Azure CLI to create a **Resource Group**.  Azure CLI is already pre-installed and configured to use your Azure account (subscription) in the Cloud Shell.  Alternatively, you can also use Azure Portal to create this resource group.  
 
     ```bash
@@ -32,6 +36,7 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     **NOTE:** Keep in mind, you will need to substitute the resource group name in multiple CLI commands in the remainder of this project!  For the remainder of this project, the resource group will be referred to as **RG_NAME**.
 
 3.  Provision a Linux CentOS VM on Azure
+
     Use the command below to create a **CentOS 7.4** VM on Azure.  Make sure you specify the correct values for RG_NAME for *password*.  Once the command completes, it will print the VM connection info. in the JSON message (response).  Note down the **Public IP address**, **Login name** and **Password** info. so that we can connect to this VM using SSH (secure shell).
 
     Alternatively, if you prefer you can use SSH based authentication to connect to the Linux VM.  The steps for creating and using an SSH key pair for Linux VMs in Azure is documented [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys).  You can then specify the location of the public key with the `--ssh-key-path` option to the `az vm create ...` command.
@@ -43,6 +48,7 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     ```
 
 4.  Login into the Linux VM via SSH.
+
     On a Windows PC, you can use a SSH client such as [Putty](https://putty.org/) or the [Windows Sub-System for Linux (Windows 10)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to login into the VM.
 
     **NOTE:** Use of Cloud Shell to SSH into the VM is **NOT** recommended.
@@ -54,7 +60,8 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     ```
 
 5.  Install CLI tools
-    Install Azure CLI, Kubernetes CLI, Helm CLI, Service Catalog CLI, Git client, Open JDK, Jenkins and Maven on this VM.
+
+    Install Azure CLI, Kubernetes CLI, Helm CLI, Service Catalog CLI, Git client, Open JDK and Maven on this VM.
 
     If you are a Linux power user and would like to save yourself some typing time, use this [shell script](./shell-scripts/setup-bastion.sh) to install all the pre-requisite CLI tools.
 
@@ -91,11 +98,6 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     # Check JDK version
     $ java -version
     #
-    # Install Jenkins 2.138.1
-    $ mkdir jenkins
-    $ cd jenkins
-    $ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-    #
     # Switch back to home directory
     $ cd
     #
@@ -108,12 +110,12 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     # Switch back to home directory
     $ cd
     #
-    # Install Helm v2.11.0
+    # Install Helm v2.14.3
     # Create a new directory 'Helm' under home directory to store the helm binary
     $ mkdir helm
     $ cd helm
-    $ wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz
-    $ tar -xzvf helm-v2.11.0-linux-amd64.tar.gz
+    $ wget https://storage.googleapis.com/kubernetes-helm/helm-v2.14.3-linux-amd64.tar.gz
+    $ tar -xzvf helm-v2.14.3-linux-amd64.tar.gz
     #
     # Switch back to home directory
     $ cd
@@ -141,6 +143,7 @@ Follow the steps below to create the Bastion host (Linux VM), install pre-requis
     ```
 
 6.  Install **docker-ce** container runtime
+
     Refer to the commands below.  You can also refer to the [Docker CE install docs for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/).
 
     ```bash
