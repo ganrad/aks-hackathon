@@ -1,4 +1,4 @@
-#  Azure Kubernetes Service Hackathon
+#  Azure Kubernetes Service *Hackathon*
 This hackathon is for advanced users of Kubernetes.  The goal of this hackathon is to educate attendees on many of the preview features introduced in the latest version of AKS.  This project will be updated frequently to include challenges for newly introduced and upcoming features in AKS.
 
 ### Description:
@@ -16,5 +16,7 @@ In a nutshell, you will work on the following tasks.
 4.  (Optional) Download and install [Postman App](https://www.getpostman.com/apps), a REST API Client used for testing the Web API's.
 
 ### Challenges:
+Complete the following challenges (labs) in order.  Keep in mind, the challenges get progressively complex (and harder).   Complete all steps in a given challenge and verify all steps (output) before proceeding to the next challenge.
 
 [1. Deploy a Linux CentOS VM on Azure (~ Bastion Host ~ Jump-Box)](https://github.com/ganrad/aks-hackathon/tree/master/1-Deploy-LinuxVM)
+[2. Test the *Purchase Order* microservice locally using docker](https://github.com/ganrad/aks-hackathon/tree/master/2-Test-Microservice)
