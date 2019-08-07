@@ -1,4 +1,4 @@
-#  Deploy *MySQL* and *Purchase Order* microservice in standalone docker containers and test them locally
+#  Deploy *MySQL* and *Purchase Order* microservice in standalone docker containers
 **Approx. time to complete this section: 30 minutes**
 
 ### Description:
@@ -16,13 +16,13 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
 
 3. Clone this GitHub repository to the Linux VM.
 
-4. Update SpringBoot configuration file `src/main/resources/application.properties` file with correct values for MySQL host, port, database name, root user name, application user name and password.
+4. Update SpringBoot configuration file `src/main/resources/application.properties` with correct values for MySQL host, port, database name, root user name, application user name and password.
 
 5. Build the *Purchase Order* microservice application using *Maven*.
 
 6. Execute a docker *Build* using the provided `Dockerfile`.
 
-7. Run the Purchase Order microservice container.
+7. Run the Purchase Order microservice container built in Step [6].
 
 8. Test the microservice API end-points.  Refer to the table below.
 
@@ -35,4 +35,4 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
    orders/{id} | PUT | To update a new purchase order. The API consumes and produces orders in `JSON` format.
    orders/{id} | DELETE | To delete a purchase order. 
 
-You have now completed this lab exercise.  Go back to the parent project and proceed with the next challenge. 
+You have now completed this challenge.  Return to the parent project and proceed with the next challenge. 
