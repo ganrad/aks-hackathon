@@ -1,4 +1,4 @@
-#  Deploy a Linux VM (Jump-Box / Bastion Host)
+#  Deploy a Linux VM on Azure (Jump-Box / Bastion Host)
 **Approx. time to complete this section: 45 minutes**
 
 ### Description:

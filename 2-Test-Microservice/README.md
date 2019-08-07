@@ -1,4 +1,4 @@
-#  Deploy *MySQL* and *Purchase Order* microservice in standalone docker containers
+#  Build and test the *Purchase Order* microservice container
 **Approx. time to complete this section: 30 minutes**
 
 ### Description:

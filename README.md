@@ -20,4 +20,4 @@ Complete the following challenges (labs) in order.  Keep in mind, the challenges
 
 [1. Deploy a Linux CentOS VM on Azure (~ Bastion Host ~ Jump-Box)](https://github.com/ganrad/aks-hackathon/tree/master/1-Deploy-LinuxVM)
 
-[2. Test the *Purchase Order* microservice locally using docker](https://github.com/ganrad/aks-hackathon/tree/master/2-Test-Microservice)
+[2. Build and test the *Purchase Order* microservice container](https://github.com/ganrad/aks-hackathon/tree/master/2-Test-Microservice)
