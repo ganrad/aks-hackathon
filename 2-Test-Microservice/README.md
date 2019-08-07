@@ -16,7 +16,7 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
 
 3. Clone this GitHub repository to the Linux VM.
 
-4. Update SpringBoot configuration file `src/main/resources/application.properties` with correct values for MySQL host, port, database name, root user name, application user name and password.
+4. Update SpringBoot configuration file `src/main/resources/application.properties` with correct values for MySQL host, port, database name, application user name and password.
 
 5. Build the *Purchase Order* microservice application using *Maven*.
 
