@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "po-service.fullname" . }}
+  labels:
+    app: {{ template "po-service.name" . }}
+    chart: {{ template "po-service.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "po-service.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "po-service.name" . }}
+        release: {{ .Release.Name }}
+        aadpodidbinding: "hackathon"
+    spec:
+      volumes:
+      - name: mysqlcm
+        configMap:
+          name: mysql-db-name
+      - name: mysqlse
+        flexVolume:
+          driver: "azure/kv"
+          options:
+            usepodidentity: "true" 
+            keyvaultname: {{ .Values.deployment.keyVaultName }}
+            keyvaultobjectnames: "mysqluser;mysqlpassword"
+            keyvaultobjectaliases: "username.properties;password.properties"
+            keyvaultobjecttypes: "secret;secret"
+            resourcegroup: {{ .Values.deployment.fvResourceGroup }}
+            subscriptionid: {{ .Values.deployment.subscriptionId }}
+            tenantid: {{ .Values.deployment.tenantId }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          volumeMounts:
+          - name: mysqlcm
+            mountPath: /etc/config
+          - name: mysqlse
+            mountPath: /etc/vol-secrets
+          env:
+          - name: MYSQL_SVC_NAMESPACE
+            value: {{ .Values.service.fullName }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
