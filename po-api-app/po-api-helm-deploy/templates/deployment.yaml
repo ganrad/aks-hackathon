@@ -33,7 +33,7 @@ spec:
             keyvaultobjectnames: "mysqluser;mysqlpassword"
             keyvaultobjectaliases: "username.properties;password.properties"
             keyvaultobjecttypes: "secret;secret"
-            resourcegroup: {{ .Values.deployment.fvResourceGroup }}
+            resourcegroup: {{ .Values.deployment.kvResourceGroup }}
             subscriptionid: {{ .Values.deployment.subscriptionId }}
             tenantid: {{ .Values.deployment.tenantId }}
       containers:
