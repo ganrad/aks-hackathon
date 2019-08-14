@@ -22,7 +22,7 @@ CREATE DATABASE sampledb;
 git clone https://github.com/ganrad/aks-hackathon.git
  
 # Switch to the `po-app` directory
-cd po-app
+cd po-api-app
 
 # Copy 'application.properties' file as 'application.properties.bkup' in repo. parent directory
 cp ./src/main/resources/application.properties ./applicationn.properties.bkup

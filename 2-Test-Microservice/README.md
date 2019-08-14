@@ -16,7 +16,7 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
 
 3. Clone this GitHub repository to the Linux VM.
 
-4. Switch to the `po-app` sub directory.
+4. Switch to the `po-api-app` sub directory.
 
 5. Copy `src/main/resources/application.properties` file to parent directory with a different name (eg., Save it as file `application.properties.bkup`)
 
