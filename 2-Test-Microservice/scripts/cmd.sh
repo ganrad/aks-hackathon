@@ -21,6 +21,9 @@ CREATE DATABASE sampledb;
 # Clone the 'aks-hackathon' GitHub project to the Linux VM (local instance)
 git clone https://github.com/ganrad/aks-hackathon.git
  
+# Switch to the `po-app` directory
+cd po-app
+
 # Copy 'application.properties' file as 'application.properties.bkup' in repo. parent directory
 cp ./src/main/resources/application.properties ./applicationn.properties.bkup
 

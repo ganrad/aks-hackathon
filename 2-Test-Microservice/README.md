@@ -16,17 +16,19 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
 
 3. Clone this GitHub repository to the Linux VM.
 
-4. Copy `src/main/resources/application.properties` file to parent directory with a different name (eg., Save it as file `application.properties.bkup`)
+4. Switch to the `po-app` sub directory.
 
-5. Update SpringBoot configuration file `src/main/resources/application.properties` and specify correct values for MySQL host, port, database name, application user name and password.
+5. Copy `src/main/resources/application.properties` file to parent directory with a different name (eg., Save it as file `application.properties.bkup`)
 
-6. Build the *Purchase Order* microservice application using *Maven*.
+6. Update SpringBoot configuration file `src/main/resources/application.properties` and specify correct values for MySQL host, port, database name, application user name and password.
 
-7. Execute a docker *Build* using the provided `Dockerfile`.
+7. Build the *Purchase Order* microservice application using *Maven*.
 
-8. Run the Purchase Order microservice container built in Step [6].
+8. Execute a docker *Build* using the provided `Dockerfile`.
 
-9. Test the microservice API end-points.  Refer to the table below.
+9. Run the Purchase Order microservice container built in previous step.
+
+10. Test the microservice API end-points.  Refer to the table below.
 
    URI Template | HTTP VERB | DESCRIPTION
    ------------ | --------- | -----------
@@ -37,8 +39,8 @@ In this challenge, you will deploy a MySQL v8.0.x database server in a container
    orders/{id} | PUT | To update a new purchase order. The API consumes and produces orders in `JSON` format.
    orders/{id} | DELETE | To delete a purchase order. 
 
-10. Move the original `application.properties` file (saved in Step 4 above) to `src/main/resources/application.properties`.
+11. Move the original `application.properties` file (saved in Step 5 above) to `src/main/resources/application.properties`.
 
-11. Build the application and the container image (repeat Steps 6 and 7).
+11. Build the application and the container image (repeat Steps 7 and 8).
 
 You have now completed this challenge.  Return to the parent project and proceed with the next challenge. 

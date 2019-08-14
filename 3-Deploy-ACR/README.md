@@ -16,6 +16,8 @@ In this challenge, you will deploy an Azure Container Registry (ACR) instance. F
 
 3. Login to the ACR instance.
 
-4. Tag the *Purchase Order* container image and push it into the ACR instance (eg., `po-service:v1`).
+4. Tag the *Purchase Order* container image (eg., `po-service:v1`).
+
+5. Push the tagged container image into ACR.
 
 You have now completed this challenge.  Return to the parent project and proceed with the next challenge. 
