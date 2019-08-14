@@ -22,4 +22,4 @@ Complete the following challenges (labs) in order.  Keep in mind, the challenges
 
 [2. Build and test the *Purchase Order* microservice container](https://github.com/ganrad/aks-hackathon/tree/master/2-Test-Microservice)
 
-[3. Deploy ACR.  Push *Purchase order* container image to ACR](https://github.com/ganrad/aks-hackathon/tree/master/3-Deploy-ACR)
+[3. Deploy ACR instance and push *Purchase order* container image into the registry](https://github.com/ganrad/aks-hackathon/tree/master/3-Deploy-ACR)
