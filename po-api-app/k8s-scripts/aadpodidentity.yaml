@@ -4,5 +4,5 @@ metadata:
   name: flexvol-po-kv-id
 spec:
   type: 0
-  ResourceID: /subscriptions/f99e3e10-4fe2-476a-bf9c-e2e1be9e7a53/resourceGroups/csu-dev-grts-rg3/providers/Microsoft.KeyVault/vaults/po-api-kv
-  ClientID: d7a0dfa8-49ca-430e-8329-4cdfba1bf9ce
+  ResourceID: <ID of managed identity>
+  ClientID: <Client ID of managed identity>
