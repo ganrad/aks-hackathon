@@ -29,13 +29,13 @@ spec:
           driver: "azure/kv"
           options:
             usepodidentity: "true" 
-            keyvaultname: {{ .Values.deployment.keyVaultName }}
+            keyvaultname: "{{ .Values.deployment.keyVaultName }}"
             keyvaultobjectnames: "mysqluser;mysqlpassword"
             keyvaultobjectaliases: "username.properties;password.properties"
             keyvaultobjecttypes: "secret;secret"
-            resourcegroup: {{ .Values.deployment.kvResourceGroup }}
-            subscriptionid: {{ .Values.deployment.subscriptionId }}
-            tenantid: {{ .Values.deployment.tenantId }}
+            resourcegroup: "{{ .Values.deployment.kvResourceGroup }}"
+            subscriptionid: "{{ .Values.deployment.subscriptionId }}"
+            tenantid: "{{ .Values.deployment.tenantId }}"
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -51,7 +51,9 @@ spec:
             mountPath: /etc/vol-secrets
           env:
           - name: MYSQL_SVC_NAMESPACE
-            value: {{ .Values.service.fullName }}
+            value: "{{ .Values.service.mysqlHost }}"
+          - name: MYSQL_SERVICE_PORT
+            value: "{{ .Values.service.mysqlPort }}"
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

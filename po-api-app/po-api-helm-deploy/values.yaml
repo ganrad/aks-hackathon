@@ -10,16 +10,17 @@ image:
   pullPolicy: Always
 
 service:
-  fullName: mysql.po-api-db
+  mysqlHost: <MySQL-Service-Name.K8S-Namespace>
+  mysqlPort: 3306
   type: ClusterIP
   port: 80
   targetPort: 8080
 
 deployment:
-  keyVaultName: po-api-kv
-  kvResourceGroup: csu-dev-grts-rg3
-  subscriptionId: f99e3e10-4fe2-476a-bf9c-e2e1be9e7a53
-  tenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+  keyVaultName: <Azure Key Vault Name>
+  kvResourceGroup: <Azure Key Vault Resource Group>
+  subscriptionId: <Azure Subscription ID>
+  tenantId: <Azure AD Tenant ID>
 
 ingress:
   enabled: true
