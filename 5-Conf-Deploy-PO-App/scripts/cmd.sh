@@ -4,6 +4,8 @@ kubectl create namespace po-api-dev
 # Create namespace 'po-api-db'
 kubectl create namespace po-api-db
 
+# Switch to the 'po-api-app' directory
+
 # Deploy MySQL container in 'po-api-db' namespace
 kubectl apply -f ./k8s-scripts/mysql-deploy.yaml -n po-api-db
 
@@ -56,7 +58,7 @@ kubectl get azureidentitybinding -n po-api-dev
 
 # Update Helm chart template files
 
-# Review and update values for the following parameters in 'values.yaml' file
+# Review and update values for the following parameters in './po-api-helm-deploy/values.yaml' file
 # - ACR name
 # - MySQL Service name
 # - MySQL Port
@@ -74,4 +76,4 @@ curl http://localhost:8080/po/api/v1/orders
 
 # Optional: Delete the Purchase Order API application
 helm list
-helm delete <name of release> --purge
+helm delete <name of application> --purge
